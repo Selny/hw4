@@ -148,13 +148,13 @@ public:
         computers->SetIsSSD(cs->GetIsSSD());
     }
     
-    void addComputer() {
-        
-    }
-    
     friend ostream & operator << (ostream &out, const ComputerStore &cs);
     friend istream & operator >> (istream &in, ComputerStore &cs);
 
+    ~ComputerStore() {
+        delete[] computers;
+    }
+    
 };
 
 ostream & operator << (ostream &out, const ComputerStore &cs) {
